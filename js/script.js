@@ -3,12 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Menu mobile toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
     const authButtons = document.querySelector('.auth-buttons');
     const header = document.querySelector('.header');
     
     if (menuToggle) {
         menuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
             authButtons.classList.toggle('active');
             header.classList.toggle('menu-open');
             
@@ -21,12 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             }
-        });
+        });}
         
         // Fecha o menu ao clicar em um link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
+        document.querySelectorAll('.nav-menu a, .mobile-menu a').forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
                 authButtons.classList.remove('active');
                 header.classList.remove('menu-open');
                 
@@ -178,4 +181,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Verifica elementos ao rolar a página
     window.addEventListener('scroll', checkFade);
-});
+}); // Close DOMContentLoaded event listener
