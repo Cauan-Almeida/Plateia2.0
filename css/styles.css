@@ -624,6 +624,7 @@ ul {
 }
 
 /* ===== RESPONSIVIDADE ===== */
+/* --- Geral --- */
 @media (max-width: 992px) {
     .feature-block,
     .feature-block.reverse {
@@ -654,6 +655,7 @@ ul {
 }
 
 @media (max-width: 768px) {
+    /* --- Header Responsive --- */
     .header {
         padding: 1rem 0;
     }
@@ -692,6 +694,7 @@ ul {
         display: block;
     }
     
+    /* --- Hero Responsive --- */
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -700,10 +703,12 @@ ul {
         font-size: 1.1rem;
     }
     
+    /* --- Sections Responsive --- */
     .section-header h2 {
         font-size: 2rem;
     }
     
+    /* --- Footer Responsive --- */
     .footer-top {
         flex-direction: column;
     }
@@ -716,10 +721,12 @@ ul {
 }
 
 @media (max-width: 576px) {
+    /* --- Hero Responsive --- */
     .hero-content h1 {
         font-size: 2rem;
     }
     
+    /* --- Features Responsive --- */
     .feature-content h3 {
         font-size: 1.5rem;
     }
@@ -730,5 +737,388 @@ ul {
     
     .newsletter-form {
         flex-direction: column;
+    }
+    
+    /* --- Testimonials Responsive --- */
+    .testimonial-card {
+        flex: 0 0 100%;
+    }
+    
+    /* --- Footer Responsive --- */
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+}
+
+/* ===== ESTILOS PÁGINA SOBRE NÓS ===== */
+.about-us {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-color); /* Ensure background is light */
+}
+
+.about-us .container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding-top: var(--spacing-lg); /* Add some space above content below header */
+}
+
+.about-content {
+    flex: 1;
+    min-width: 300px; /* Ensure content doesn't get too small */
+    padding-bottom: var(--spacing-md); /* Add padding below content before image on wrap */
+}
+
+.about-content h1 {
+    font-size: 3rem; /* Slightly larger heading */
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.about-content h2 {
+    font-size: 2rem; /* Slightly larger subheading */
+    color: var(--primary-dark);
+    margin-top: var(--spacing-lg); /* More space above subheadings */
+    margin-bottom: var(--spacing-sm);
+}
+
+.about-content p {
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-md); /* More space between paragraphs */
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px; /* Ensure image container doesn't get too small */
+}
+
+.about-image img {
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    width: 100%; /* Ensure image fills its container */
+    height: auto;
+}
+
+/* Responsive adjustments for About Us page */
+@media (max-width: 992px) {
+    .about-us .container {
+        flex-direction: column; /* Stack columns on tablets and smaller */
+        gap: var(--spacing-md);
+    }
+
+    .about-content,
+    .about-image {
+        min-width: unset; /* Remove min-width for stacking */
+        width: 100%;
+    }
+
+    .about-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem;
+        margin-top: var(--spacing-md);
+    }
+}
+
+@media (max-width: 576px) {
+    .about-content h1 {
+        font-size: 2rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== ESTILOS DASHBOARD ===== */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--light-gray); /* Ensure consistent background */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-dark);
+    color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-md) 0; /* Keep existing padding */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Add shadow to sidebar */
+    position: fixed; /* Make sidebar fixed */
+    height: 100%; /* Full height */
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 0 var(--spacing-md) var(--spacing-lg) var(--spacing-md); /* More space below header */
+}
+
+.sidebar-logo {
+    width: 120px;
+}
+
+.sidebar-nav {
+    flex-grow: 1; /* Allow navigation to take up available space */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--secondary-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add color transition */
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-color); /* Change color on active/hover */
+}
+
+.sidebar-nav ul li a i {
+    margin-right: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-footer .user-info {
+    display: flex;
+    align-items: center;
+    color: var(--light-color); /* Ensure text color is light */
+}
+
+.sidebar-footer .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: var(--spacing-sm);
+    border: 2px solid var(--secondary-color); /* Add border to avatar */
+    object-fit: cover; /* Ensure avatar image covers the space */
+}
+
+.sidebar-footer span {
+    color: var(--light-color);
+    font-weight: 500;
+}
+
+.sidebar-footer a {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease; /* Add transition for hover */
+}
+
+.sidebar-footer a:hover {
+    color: var(--light-color); /* Change color on hover */
+}
+
+.main-content {
+    flex: 1;
+    background-color: var(--light-gray);
+    padding: var(--spacing-md);
+    margin-left: 250px; /* Add margin to main content to make space for fixed sidebar */
+}
+
+.navbar {
+    background-color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: var(--spacing-md);
+}
+
+.nav-left a,
+.nav-right a {
+    margin-right: var(--spacing-md);
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s ease; /* Add transition */
+    padding: 0.5rem 0; /* Add padding for clickable area */
+}
+
+.nav-left a:last-child,
+.nav-right a:last-child {
+    margin-right: 0; /* Remove margin from last link */
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    color: var(--primary-color); /* Change color on hover */
+}
+
+.nav-left a.active {
+    color: var(--primary-color);
+    position: relative; /* Needed for underline effect */
+}
+
+.nav-left a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px; /* Adjust position of underline */
+    left: 0;
+    background-color: var(--primary-color);
+}
+
+.nav-right .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.dashboard-main {
+    padding: var(--spacing-md) 0; /* Adjust padding */
+}
+
+.highlights,
+.explore-topics {
+    margin-bottom: var(--spacing-lg);
+    background-color: white; /* Add background to sections */
+    padding: var(--spacing-md); /* Add padding to sections */
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Add shadow to sections */
+}
+
+.highlights h2,
+.explore-topics h2 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.highlights p,
+.explore-topics p {
+     color: var(--gray-color);
+     margin-bottom: var(--spacing-md);
+}
+
+.highlight-cards,
+.topic-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.card {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Add hover effect */
+    height: 100%; /* Ensure cards in the grid have equal height */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+}
+
+.card img {
+    width: 100%;
+    height: 180px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+    margin: var(--spacing-sm) var(--spacing-md) 0 var(--spacing-md);
+}
+
+.card p {
+    color: var(--gray-color);
+    padding: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    flex-grow: 1; /* Allow paragraph to take space */
+}
+
+.card button {
+    margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    width: calc(100% - var(--spacing-md) * 2); /* Full width minus padding */
+}
+
+/* Responsive adjustments for Dashboard page */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column; /* Stack sidebar and main content */
+    }
+
+    .sidebar {
+        position: relative; /* Remove fixed positioning on smaller screens */
+        width: 100%;
+        height: auto; /* Adjust height for stacked layout */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-sm);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow for bottom */
+    }
+
+    .sidebar-header {
+        padding: 0;
+    }
+
+    .sidebar-logo {
+        width: 100px;
+    }
+
+    .sidebar-nav {
+        display: none; /* Hide main sidebar nav on smaller screens */
+    }
+
+    .sidebar-footer {
+        border-top: none;
+        padding: 0;
+    }
+
+    .sidebar-footer .user-info {
+        margin-right: var(--spacing-sm);
+    }
+
+    .main-content {
+        padding: var(--spacing-sm);
+        margin-left: 0; /* Remove margin when sidebar is not fixed */
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-left,
+    .nav-right {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .nav-left a,
+    .nav-right a {
+        margin-right: var(--spacing-sm);
+    }
+
+    .highlight-cards,
+    .topic-cards {
+        grid-template-columns: 1fr;
     }
 }
