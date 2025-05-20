@@ -1,0 +1,136 @@
+/* Hero */
+.ajuda-hero {
+  position: relative;
+  min-height: 35vh;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.ajuda-hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+.ajuda-hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.ajuda-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.ajuda-hero p { font-size: 1.2rem; }
+
+/* FAQ Section */
+.ajuda-section {
+  padding: 4rem 0;
+  background: #fff;
+}
+.ajuda-section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.faq-item {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+.faq-question {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.3s ease;
+}
+.faq-question:hover {
+  background: #f8f9fa;
+}
+.faq-question i {
+  transition: transform 0.3s ease;
+}
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: #666;
+  line-height: 1.6;
+}
+.faq-item.active .faq-answer {
+  padding: 0 1.5rem 1.5rem;
+  max-height: 500px;
+}
+
+/* Contact Section */
+.contact-section {
+  background: #f8f9fa;
+  padding: 4rem 0;
+  text-align: center;
+}
+.contact-section h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.contact-section p {
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.contact-button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,123,255,0.2);
+}
+
+@media (max-width: 768px) {
+  .ajuda-hero h1 { font-size: 2rem; }
+  .ajuda-section h2 { font-size: 1.8rem; }
+  .faq-question { padding: 1.2rem; }
+  .faq-item.active .faq-answer {
+    padding: 0 1.2rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ajuda-hero h1 { font-size: 1.8rem; }
+  .ajuda-section h2 { font-size: 1.5rem; }
+  .faq-question { padding: 1rem; }
+  .faq-item.active .faq-answer {
+    padding: 0 1rem 1rem;
+  }
+} 
