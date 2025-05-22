@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Tópicos - Plateia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/sala.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/faveicon2.0.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="js/firebase-config.js"></script>
+    
+    <!-- Script de verificação de autenticação -->
+    <script src="js/auth-check.js"></script>
+</head>
+<body>
+    <div class="sala-container">
+        <aside class="sala-sidebar">
+            <div class="sidebar-header">
+                <a href="dashboard.html">
+                    <img src="images/logo2.0.png" alt="Logo Plateia" class="sidebar-logo">
+                </a>
+            </div>
+            <div class="sala-info" style="text-align:center;">
+                <h3 id="sala-titulo">Sala de Tópicos</h3>
+                <p id="sala-descricao">Selecione uma sala para começar</p>
+            </div>
+            <div class="sala-selector" style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+                <select id="sala-select" class="form-control" style="max-width:220px;">
+                    <option value="" selected disabled>Selecione uma sala</option>
+                    <option value="tecnologia">Tecnologia</option>
+                    <option value="jogos">Jogos em Geral</option>
+                    <option value="saude">Saúde Mental</option>
+                    <option value="tech-talks">Palestras de Tecnologia</option>
+                    <option value="literatura-poesia">Literatura e Poesia</option>
+                    <option value="jogos-educativos">Jogos Educativos</option>
+                    <option value="educacao">Educação</option>
+                </select>
+                <button id="entrar-sala-btn" class="btn btn-primary" style="width:220px;">
+                    <i class="fas fa-sign-in-alt"></i> Entrar na Sala
+                </button>
+            </div>
+            <div class="sidebar-footer" style="display:flex; justify-content:center;">
+                <a href="dashboard.html" class="btn btn-outline voltar-dashboard">
+                    <i class="fas fa-arrow-left"></i> Voltar ao Dashboard
+                </a>
+            </div>
+        </aside>
+
+        <main class="sala-main">
+            <div class="sala-tabs">
+                <button class="tab-btn active" data-tab="video"><i class="fas fa-video"></i> Vídeo</button>
+                <button class="tab-btn" data-tab="chat"><i class="fas fa-comments"></i> Chat</button>
+                <button class="tab-btn" data-tab="whiteboard"><i class="fas fa-chalkboard"></i> Quadro</button>
+                <button class="tab-btn" data-tab="files"><i class="fas fa-file-alt"></i> Arquivos</button>
+            </div>
+            
+            <div class="sala-content">
+                <div id="video-tab" class="tab-content active">
+                    <div id="jitsi-container" class="video-container">
+                        <!-- Jitsi Meet será carregado aqui -->
+                        <div class="empty-state">
+                            <i class="fas fa-video"></i>
+                            <p>Selecione uma sala para iniciar a videoconferência</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="chat-tab" class="tab-content">
+                    <div class="chat-container">
+                        <div id="chat-messages" class="chat-messages">
+                            <!-- Mensagens serão preenchidas dinamicamente -->
+                            <div class="empty-state">
+                                <i class="fas fa-comments"></i>
+                                <p>Selecione uma sala para ver o chat</p>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="message-input" placeholder="Digite sua mensagem..." class="form-control">
+                            <button id="send-message-btn" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="whiteboard-tab" class="tab-content">
+                    <div class="whiteboard-container">
+                        <!-- Whiteboard será carregado aqui -->
+                        <div class="empty-state">
+                            <i class="fas fa-chalkboard"></i>
+                            <p>Selecione uma sala para acessar o quadro compartilhado</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="files-tab" class="tab-content">
+                    <div class="files-container">
+                        <div class="files-header">
+                            <h4>Arquivos Compartilhados</h4>
+                            <button id="upload-file-btn" class="btn btn-sm btn-primary">
+                                <i class="fas fa-upload"></i> Enviar Arquivo
+                            </button>
+                        </div>
+                        <div id="files-list" class="files-list">
+                            <!-- Arquivos serão preenchidos dinamicamente -->
+                            <div class="empty-state">
+                                <i class="fas fa-file-alt"></i>
+                                <p>Selecione uma sala para ver os arquivos compartilhados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Jitsi Meet API -->
+    <script src="https://meet.jit.si/external_api.js"></script>
+
+    <!-- Whiteboard API (usando Excalidraw) -->
+    <script src="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.production.min.js"></script>
+
+    <!-- Nossos scripts -->
+    <script src="js/init-firestore-rules.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/simple-whiteboard.js"></script>
+    <script src="js/sala.js"></script>
+    
+    <!-- Script para verificar se o Jitsi foi carregado -->
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof JitsiMeetExternalAPI !== 'function') {
+                console.warn('JitsiMeetExternalAPI não foi carregado. Tentando novamente...');
+                
+                // Tentar carregar o script novamente
+                const jitsiScript = document.createElement('script');
+                jitsiScript.src = 'https://meet.jit.si/external_api.js';
+                document.head.appendChild(jitsiScript);
+            } else {
+                console.log('JitsiMeetExternalAPI carregado com sucesso');
+            }
+            
+            // Verificar se o Excalidraw foi carregado
+            if (!window.ExcalidrawLib) {
+                console.warn('ExcalidrawLib não foi carregado. Tentando novamente...');
+                
+                // Definir um objeto global simples para evitar erros
+                window.ExcalidrawLib = {
+                    Excalidraw: function(options) {
+                        console.log('Usando implementação alternativa do Excalidraw');
+                        const container = options.container;
+                        container.innerHTML = `
+                            <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#f5f5f5; border-radius:8px;">
+                                <i class="fas fa-chalkboard" style="font-size:48px; color:#666; margin-bottom:16px;"></i>
+                                <p style="font-size:16px; color:#333;">O quadro branco não está disponível nesta versão.</p>
+                                <small style="color:#666;">Esta funcionalidade requer a biblioteca Excalidraw.</small>
+                            </div>
+                        `;
+                        return {};
+                    }
+                };
+                
+                // Tentar carregar o script novamente
+                const excalidrawScript = document.createElement('script');
+                excalidrawScript.src = 'https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.production.min.js';
+                document.head.appendChild(excalidrawScript);
+            } else {
+                console.log('ExcalidrawLib carregado com sucesso');
+            }
+        });
+    </script>
+</body>
+</html> 

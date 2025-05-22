@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plateia - Melhore suas habilidades de falar em público</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index-styles.css">
     <!-- Fonte Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +14,7 @@
     <!-- Ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="index-body">
     <!-- Header fixo com logo e menu de navegação -->
     <header class="header">
         <div class="container">
@@ -23,13 +24,13 @@
             <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html" class="active">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="#recursos">Recursos</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="login.html" class="btn btn-outline">Entrar</a>
+                <a href="login.html" class="index-btn index-btn-outline">Entrar</a>
                 <a href="registro.html" class="btn btn-primary">Inscreva-se</a>
             </div>
             <div class="menu-toggle">
@@ -38,61 +39,62 @@
             <div class="mobile-menu">
                 <ul>
                     <li><a href="index.html" class="active">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="#recursos">Recursos</a></li>
                     <li><a href="contato.html">Contato</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="login.html">Entrar</a></li>
+                    <li><a href="registro.html">Inscreva-se</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
     <!-- Hero Section com imagem de fundo e overlay -->
-    <section class="hero">
+    <section class="index-hero">
         <div class="overlay"></div>
         <div class="container">
-            <div class="hero-content">
+            <div class="index-hero-content">
                 <h1>Melhore suas habilidades de falar em público</h1>
                 <p>Domine a arte da comunicação com a orientação especializada da Plateia.</p>
-                <a href="registro.html" class="btn btn-primary">Começar</a>
+                <a href="registro.html" class="index-btn index-btn-primary">Começar</a>
             </div>
         </div>
     </section>
 
     <!-- Seção de recursos -->
-    <section class="features" id="recursos">
+    <section class="index-features" id="recursos">
         <div class="container">
-            <div class="section-header">
+            <div class="index-section-header">
                 <h2>Visão Geral dos Recursos</h2>
                 <p>Explore os principais recursos da Plateia que ajudarão a aprimorar e desenvolver suas habilidades de comunicação e apresentação para impactar seu público.</p>
             </div>
 
             <!-- Bloco de recurso: Prática Colaborativa -->
-            <div class="feature-block">
-                <div class="feature-content">
+            <div class="index-feature-block">
+                <div class="index-feature-content">
                     <h3>Prática Colaborativa</h3>
                     <p>Aprimore suas habilidades de apresentação com a prática colaborativa e receba feedback construtivo dos colegas, ajudando a identificar pontos fortes e áreas de melhoria.</p>
-                    <div class="feature-links">
+                    <div class="index-feature-links">
                         <a href="registro.html" class="btn btn-secondary">Experimente agora</a>
                         <a href="#recursos" class="link">Saiba mais</a>
                     </div>
                 </div>
-                <div class="feature-image">
+                <div class="index-feature-image">
                     <img src="images/praticacolaborativa.jpg" alt="Prática Colaborativa">
                 </div>
             </div>
 
             <!-- Bloco de recurso: Mecanismo de Feedback -->
-            <div class="feature-block reverse">
-                <div class="feature-content">
+            <div class="index-feature-block reverse">
+                <div class="index-feature-content">
                     <h3>Mecanismo de Feedback</h3>
                     <p>Receba um feedback detalhado e objetivo sobre suas apresentações, com métricas e sugestões personalizadas para aprimorar sua comunicação verbal.</p>
-                    <div class="feature-links">
+                    <div class="index-feature-links">
                         <a href="registro.html" class="btn btn-secondary">Experimente agora</a>
                         <a href="#recursos" class="link">Saiba mais</a>
                     </div>
                 </div>
-                <div class="feature-image">
+                <div class="index-feature-image">
                     <img src="images/feedback.jpg" alt="Mecanismo de Feedback">
                 </div>
             </div>
@@ -100,15 +102,15 @@
     </section>
 
     <!-- Carrossel de depoimentos -->
-    <section class="testimonials">
+    <section class="index-testimonials">
         <div class="container">
-            <div class="section-header">
+            <div class="index-section-header">
                 <h2>Avaliações dos nossos usuários!</h2>
             </div>
-            <div class="testimonial-carousel">
-                <div class="testimonial-container">
+            <div class="index-testimonial-carousel">
+                <div class="index-testimonial-container">
                     <!-- Depoimento 1 -->
-                    <div class="testimonial-card">
+                    <div class="index-testimonial-card active">
                         <div class="user-info">
                             <div class="user-avatar">
                                 <img src="images/emily carter.jpg" alt="Emily Carter">
@@ -128,7 +130,7 @@
                     </div>
 
                     <!-- Depoimento 2 -->
-                    <div class="testimonial-card">
+                    <div class="index-testimonial-card">
                         <div class="user-info">
                             <div class="user-avatar">
                                 <img src="images/Michael.jpg" alt="Michael Tran">
@@ -148,7 +150,7 @@
                     </div>
 
                     <!-- Depoimento 3 -->
-                    <div class="testimonial-card">
+                    <div class="index-testimonial-card">
                         <div class="user-info">
                             <div class="user-avatar">
                                 <img src="images/Sophia.jpg" alt="Sophia Lee">
@@ -169,14 +171,14 @@
                 </div>
 
                 <!-- Controles do carrossel -->
-                <div class="carousel-controls">
-                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <div class="carousel-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                <div class="index-carousel-controls">
+                    <button class="index-prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="index-carousel-dots">
+                        <span class="index-dot active"></span>
+                        <span class="index-dot"></span>
+                        <span class="index-dot"></span>
                     </div>
-                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                    <button class="index-next-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -210,7 +212,7 @@
                         <h4>Plateia</h4>
                         <ul>
                             <li><a href="#">Preços</a></li>
-                            <li><a href="#sobre">Sobre nós</a></li>
+                            <li><a href="sobre.html">Sobre nós</a></li>
                             <li><a href="#recursos">Recursos</a></li>
                             <li><a href="ajuda.html">Central de Ajuda</a></li>
                         </ul>
@@ -253,5 +255,13 @@
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <!-- Nossa configuração do Firebase -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/index-script.js"></script>
 </body>
 </html>

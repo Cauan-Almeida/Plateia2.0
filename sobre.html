@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Plateia</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Use styles.css based on index.html -->
+    <!-- Fonte Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/faveicon2.0.png">
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header fixo com logo e menu de navegação -->
+    <header class="header page-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo2.0.png" alt="Logo Plateia" class="logo-img"></a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html" class="active">Sobre</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Entrar</a>
+                <a href="registro.html" class="btn btn-primary">Inscreva-se</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mobile-menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html" class="active">Sobre</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-us">
+            <div class="container">
+                <div class="about-content">
+                    <h1>Sobre Nós</h1>
+                    <p>Bem-vindo à Plateia, a plataforma dedicada a transformar a comunicação e a oratória em ferramentas poderosas de conexão e influência.</p>
+
+                    <h2>Inovação</h2>
+                    <p>A Plateia adota uma abordagem pioneira ao combinar métodos inovadores com princípios atemporais da comunicação eficaz, capacitando as pessoas a se expressarem com confiança.</p>
+
+                    <h2>Foco no Cliente</h2>
+                    <p>Nossa missão é capacitar todas as pessoas a compartilharem suas ideias com clareza e impacto, construindo conexões significativas por meio da arte da oratória.</p>
+
+                    <h2>Especialização</h2>
+                    <p>Com anos de experiência e uma equipe de profissionais apaixonados, oferecemos um ambiente incomparável para ajudar as pessoas a dominarem as nuances da comunicação.</p>
+
+                    <h2>Integridade</h2>
+                    <p>Na Plateia, valorizamos a transparência, a honestidade e a autenticidade — princípios fundamentais que orientam nossa visão de construir uma comunidade de comunicadores confiantes.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/sobre-nos.png" alt="Imagem Sobre Nós" onerror="this.onerror=null; this.src='images/default-room.jpg';">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-newsletter">
+                    <h3>Fique por dentro das novidades</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Produto</h4>
+                        <ul>
+                            <li><a href="#">Recursos</a></li>
+                            <li><a href="#">Preços</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Guias do usuário</a></li>
+                            <li><a href="#">Webinars</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="sobre.html">Sobre nós</a></li>
+                            <li><a href="#">Entre em contato</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Planos e Preços</h4>
+                        <ul>
+                            <li><a href="#">Pessoal</a></li>
+                            <li><a href="#">Início</a></li>
+                            <li><a href="#">Organização</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>Copyright © 2024 Plateia - Todos os direitos reservados.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        // Script específico para a página sobre.html
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página sobre.html carregada com sucesso');
+            
+            // Verificar se a imagem existe
+            const aboutImage = document.querySelector('.about-image img');
+            if (aboutImage) {
+                aboutImage.onerror = function() {
+                    console.error('Erro ao carregar a imagem sobre-nos.png');
+                    this.src = 'images/default-room.jpg'; // Imagem substituta caso haja erro
+                };
+                console.log('Imagem sobre-nos.png sendo carregada de:', aboutImage.src);
+            }
+            
+            // Adicionar classe para melhorar a visualização da barra de navegação
+            const header = document.querySelector('.header');
+            if (header) {
+                header.classList.add('page-header');
+            }
+        });
+    </script>
+</body>
+</html> 

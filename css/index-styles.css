@@ -1,0 +1,434 @@
+/* ===== ESTILOS ESPECÍFICOS PARA INDEX.HTML ===== */
+/* Estas classes são exclusivas para a página inicial */
+
+.index-body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #F7F7F7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.index-hero {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    background-image: url('../images/Hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 0;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.index-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 27, 51, 0.7);
+    z-index: 1;
+}
+
+.index-hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.index-hero-content {
+    max-width: 700px;
+    text-align: left !important;
+    margin-left: 0 !important;
+    float: none;
+    display: block;
+    padding-left: 0;
+}
+
+.index-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: #fff;
+    text-align: left !important;
+}
+
+.index-hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    color: #fff;
+}
+
+/* Botões específicos para o index */
+.index-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.index-btn-primary {
+    background-color: #12577B;
+    color: white !important;
+    border: 2px solid #12577B;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.index-btn-primary:hover {
+    background-color: #021B33;
+    border-color: #021B33;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.index-btn-outline {
+    background-color: transparent;
+    color: hsl(0, 0%, 100%) !important;
+    border: 2px solid #fff !important;
+    font-weight: 600;
+}
+
+.index-btn-outline:hover {
+    background-color: #fff !important;
+    color: #12577B !important;
+    border-color: #fff !important;
+}
+
+/* Garantir que o botão Entrar tenha texto branco no header */
+.auth-buttons .index-btn-outline {
+    background-color: transparent;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+}
+
+.auth-buttons .index-btn-outline:hover {
+    background-color: #fff !important;
+    color: #12577B !important;
+    border-color: #fff !important;
+}
+
+/* Features Section */
+.index-features {
+    padding: 5rem 0;
+    background-color: #e9f5ff;
+}
+
+.index-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.index-section-header h2 {
+    font-size: 2.5rem;
+    color: #021B33;
+    margin-bottom: 1rem;
+}
+
+.index-section-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.index-feature-block {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+.index-feature-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.index-feature-content,
+.index-feature-image {
+    flex: 1;
+}
+
+.index-feature-content h3 {
+    font-size: 2rem;
+    color: #021B33 !important;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.index-feature-content p {
+    color: #333 !important;
+    margin-bottom: 2rem;
+}
+
+.index-feature-links {
+    display: flex;
+    align-items: center;
+}
+
+.index-feature-image img {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.index-feature-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividade específica para o index */
+@media (max-width: 992px) {
+    .index-feature-block,
+    .index-feature-block.reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .index-feature-content,
+    .index-feature-image {
+        width: 100%;
+    }
+    
+    .index-hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .index-testimonial-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .index-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .index-hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .index-section-header h2 {
+        font-size: 2rem;
+    }
+
+    .index-testimonial-container {
+        width: 100% !important;
+        display: block;
+    }
+
+    .index-testimonial-card {
+        width: 100% !important;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        display: none;
+    }
+
+    .index-testimonial-card.active {
+        display: block;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .header .container {
+        padding: 0 15px !important;
+        height: 72px;
+    }
+
+    .index-feature-image img {
+        height: auto;
+    }
+
+    .index-carousel-controls {
+        margin-top: 1rem;
+    }
+    
+    /* Garantir que o menu mobile seja visível */
+    .mobile-menu.active {
+        display: block !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .index-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .index-feature-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .index-hero {
+        min-height: 450px;
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
+    .index-hero-content {
+        padding: 2rem 0;
+    }
+
+    .index-testimonial-card {
+        padding: 1rem 0.5rem;
+    }
+
+    .index-prev-btn, 
+    .index-next-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Melhorias na responsividade do carrossel */
+@media (max-width: 480px) {
+    .index-testimonial-card {
+        padding: 0.75rem;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .user-avatar {
+        margin-bottom: 0.5rem;
+    }
+
+    .testimonial-text {
+        font-size: 0.9rem;
+    }
+
+    .index-carousel-controls {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Carrossel de depoimentos específico para index */
+.index-testimonials {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.index-testimonial-carousel {
+    position: relative;
+    padding: var(--spacing-md) 0;
+}
+
+.index-testimonial-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 300%; /* Para 3 cards */
+}
+
+.index-testimonial-card {
+    flex: 0 0 33.333%;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.index-testimonial-card.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.index-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.index-prev-btn,
+.index-next-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.index-prev-btn:hover,
+.index-next-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.index-carousel-dots {
+    display: flex;
+    gap: 8px;
+    margin: 0 1rem;
+}
+
+.index-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.index-dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Responsividade para o carrossel */
+@media (max-width: 992px) {
+    .index-testimonial-card {
+        flex: 0 0 80%;
+        margin: 0 auto;
+    }
+    
+    .index-testimonial-container {
+        width: 300%; /* Ajustado para visualização em tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .index-testimonial-card {
+        flex: 0 0 90%;
+    }
+    
+    .index-testimonial-container {
+        width: 300%; /* Ajustado para visualização em celulares */
+    }
+} 
