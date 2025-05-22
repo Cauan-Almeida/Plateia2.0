@@ -17,9 +17,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo2.0.png" alt="Plateia" class="logo-img">
-                </a>
+                <a href="index.html" onclick="handleLogoClick()"><img src="images/logo2.0.png" alt="Plateia" class="logo-img"></a>
             </div>
             <nav class="nav-menu">
                 <ul>
@@ -35,20 +33,21 @@
     <section class="auth-section">
         <div class="container">
             <div class="auth-container">
-                <h2>Entrar</h2>
-                
-                <form class="auth-form">
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder="Digite seu e-mail" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" id="password" placeholder="Digite sua senha" required>
-                    </div>
-                    <div class="form-options">
-                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-                </form>
+                <div class="auth-box">
+                    <h2>Entrar</h2>
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                    <p class="auth-link">Não tem uma conta? <a href="registro.html">Registre-se</a></p>
+                </div>
                 
                 <div class="auth-divider">
                     <span>Ou entre com</span>
@@ -57,17 +56,8 @@
                 <div class="social-login">
                     <button class="btn-social btn-google">
                         <i class="fab fa-google"></i>
+                        <span>Continuar com Google</span>
                     </button>
-                    <button class="btn-social btn-facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </button>
-                    <button class="btn-social btn-twitter">
-                        <i class="fab fa-twitter"></i>
-                    </button>
-                </div>
-                
-                <div class="auth-footer">
-                    <p>Ainda não é registrado? <a href="registro.html">Clique aqui</a></p>
                 </div>
             </div>
         </div>
@@ -124,9 +114,13 @@
         </div>
     </footer>
 
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/auth.js"></script>
+    <!-- Scripts do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Nossos scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

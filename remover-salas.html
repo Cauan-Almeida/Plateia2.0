@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Salas - Plateia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/faveicon2.0.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #8257e5;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            min-height: 100px;
+            text-align: left;
+        }
+        .status p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .btn {
+            background-color: #8257e5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #6f48c9;
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="js/firebase-config.js"></script>
+    
+    <!-- Script de verificação de autenticação -->
+    <script src="js/auth-check.js"></script>
+    
+    <!-- Script para remover salas -->
+    <script src="js/remover-salas.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo2.0.png" alt="Logo Plateia" class="logo">
+        <h1>Remoção de Salas</h1>
+        <p>Esta página remove automaticamente as seguintes salas do banco de dados:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Fashion</li>
+            <li>Artes</li>
+            <li>Fitness Zone</li>
+            <li>Art Hub</li>
+            <li>Fitness</li>
+            <li>Mental Health</li>
+        </ul>
+        <div class="status" id="status">
+            <p>Iniciando processo de remoção...</p>
+        </div>
+        <button class="btn" onclick="window.location.href='dashboard.html'">Voltar para o Dashboard</button>
+    </div>
+    
+    <script>
+        // Função para adicionar mensagens ao status
+        function addStatus(message) {
+            const statusDiv = document.getElementById('status');
+            const p = document.createElement('p');
+            p.textContent = message;
+            statusDiv.appendChild(p);
+        }
+        
+        // Sobrescrever o console.log para mostrar na tela
+        const originalConsoleLog = console.log;
+        console.log = function() {
+            originalConsoleLog.apply(console, arguments);
+            const message = Array.from(arguments).join(' ');
+            addStatus(message);
+        };
+        
+        // Sobrescrever o console.error para mostrar na tela
+        const originalConsoleError = console.error;
+        console.error = function() {
+            originalConsoleError.apply(console, arguments);
+            const message = "ERRO: " + Array.from(arguments).join(' ');
+            addStatus(message);
+        };
+        
+        // Sobrescrever o alert para mostrar na tela
+        window.alert = function(message) {
+            addStatus("ALERTA: " + message);
+        };
+    </script>
+</body>
+</html> 
